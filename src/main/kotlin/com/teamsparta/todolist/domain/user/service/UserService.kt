@@ -8,13 +8,13 @@ import com.teamsparta.todolist.domain.todo.dto.CreateToDoRequest
 import com.teamsparta.todolist.domain.todo.dto.GetToDoRequest
 import com.teamsparta.todolist.domain.todo.dto.ToDoResponse
 import com.teamsparta.todolist.domain.todo.dto.UpdateToDoRequest
-import com.teamsparta.todolist.domain.user.dto.SignUpUserRequest
-import com.teamsparta.todolist.domain.user.dto.UpdateUserRequest
-import com.teamsparta.todolist.domain.user.dto.UserResponse
+import com.teamsparta.todolist.domain.user.dto.*
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestBody
 
 interface UserService {
+    fun signin(request: SigninUserRequest): SigninResponse
 
     fun signUp(request: SignUpUserRequest): UserResponse
     fun updateUserProfile(userId: Long, request: UpdateUserRequest): UserResponse
